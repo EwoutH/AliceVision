@@ -541,7 +541,7 @@ endif()
 # ==============================================================================
 set(ALICEVISION_HAVE_ALEMBIC 0)
 
-if(ALICEVISION_BUILD_SFM) # or ALICEVISION_BUILD_MVS
+if(ALICEVISION_BUILD_SFM OR ALICEVISION_BUILD_MVS)
   if(NOT ALICEVISION_USE_ALEMBIC STREQUAL "OFF")
     find_package(Alembic 1.7.0 CONFIG)
 

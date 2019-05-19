@@ -1,18 +1,22 @@
 # Common modules
 
+add_subdirectory(camera)
+add_subdirectory(feature)
+add_subdirectory(geometry)
+add_subdirectory(gpu)
 add_subdirectory(image)
-add_subdirectory(numeric)
+add_subdirectory(sfmData)
+add_subdirectory(sfmDataIO)
+add_subdirectory(stl)
 add_subdirectory(system)
+add_subdirectory(numeric)
 
 
 # SfM modules
 
 if(ALICEVISION_BUILD_SFM)
-  add_subdirectory(camera)
   add_subdirectory(colorHarmonization)
   add_subdirectory(dataio)
-  add_subdirectory(feature)
-  add_subdirectory(geometry)
   add_subdirectory(graph)
   add_subdirectory(gpu)
   add_subdirectory(keyframe)
@@ -25,15 +29,14 @@ if(ALICEVISION_BUILD_SFM)
   add_subdirectory(robustEstimation)
   add_subdirectory(sensorDB)
   add_subdirectory(sfm)
-  add_subdirectory(sfmData)
-  add_subdirectory(sfmDataIO)
-  add_subdirectory(stl)
   add_subdirectory(track)
   add_subdirectory(voctree)
 
   if(ALICEVISION_HAVE_OPENCV)
     add_subdirectory(calibration)
   endif()
+
+  add_subdirectory(lightingEstimation)
 endif()
 
 if(ALICEVISION_BUILD_HDR)
@@ -44,6 +47,7 @@ endif()
 
 if(ALICEVISION_BUILD_MVS)
   add_subdirectory(lightingEstimation)
+  add_subdirectory(imageIO)
   add_subdirectory(mesh)
   add_subdirectory(mvsData)
   add_subdirectory(mvsUtils)

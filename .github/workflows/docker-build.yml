@@ -7,5 +7,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: cmake -version
       - run: docker build . -f Dockerfile_ubuntu

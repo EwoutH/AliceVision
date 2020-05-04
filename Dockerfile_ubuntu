@@ -19,8 +19,8 @@ LABEL maintainer="AliceVision Team alicevision-team@googlegroups.com"
 
 # Install all compilation tools
 RUN apt-get clean && \
-    add-apt-repository ppa:ubuntu-toolchain-r/test && \
-    apt-get update
+    apt-get update && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get install -y --no-install-recommends \
         build-essential \
         cmake \

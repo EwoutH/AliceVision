@@ -28,9 +28,9 @@
 #include <memory>
 #include <algorithm>
 #include <functional>
+#include <boost/math/constants/constants.hpp>
+using namespace boost::math;
 
-
-const float PI_ = 4.0 * atan( 1.0f );
 
 //============================== simplified structure of a point=============================//
 //if you set KVLD geometry verification to false, you only need to fill x and y in a point structure
@@ -113,29 +113,29 @@ inline bool anglefrom( const float& x, const float& y, float& angle )
 	if( x != 0 )
 		angle = atan( y / x );
 	else if( y > 0 )
-		angle = PI_ / 2;
+		angle = constants::pi<double>() / 2;
 	else if( y < 0 )
-		angle =- PI_ / 2;
+		angle =- constants::pi<double>() / 2;
 	else return false;
 
 	if( x < 0 )
-		angle += PI_;
+		angle += constants::pi<double>();
 	while( angle < 0 )
-		angle += 2 * PI_;
-  while( angle >= 2 * PI_ )
-		angle -= 2 * PI_;
-	assert( angle >= 0 && angle < 2 * PI_ );
+		angle += 2 * constants::pi<double>();
+  while( angle >= 2 * constants::pi<double>() )
+		angle -= 2 * constants::pi<double>();
+	assert( angle >= 0 && angle < 2 * constants::pi<double>() );
 	return true;
 }
 
 inline double angle_difference( const double angle1, const double angle2 )
 {
 	double angle = angle1 - angle2;
-	while( angle <  0 ) angle += 2 * PI_;
-	while( angle >= 2 * PI_ )	angle -= 2 * PI_;
+	while( angle <  0 ) angle += 2 * constants::pi<double>();
+	while( angle >= 2 * constants::pi<double>() )	angle -= 2 * constants::pi<double>();
 
-	assert(angle <= 2 * PI_ && angle >= 0 );
-	return std::min( angle, 2 * PI_ - angle );
+	assert(angle <= 2 * constants::pi<double>() && angle >= 0 );
+	return std::min( angle, 2 * constants::pi<double>() - angle );
 }
 
 inline void max( double* list,double& weight, int size, int& index, int& second_index )

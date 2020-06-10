@@ -32,7 +32,7 @@ public:
     , _isOriented(isOriented)
   {
 #if ALICEVISION_IS_DEFINED(ALICEVISION_HAVE_POPSIFT)
-    setUseCuda(gpu::gpuSupportCUDA(3,0));
+    setUseCuda(gpu::gpuSupportCUDA(5,2));
 #else
     setUseCuda(false);
 #endif

@@ -12,7 +12,7 @@
 #include <cctag/ICCTag.hpp>
 #include <cctag/utils/LogTime.hpp>
 //#define CPU_ADAPT_OF_GPU_PART //todo: #ifdef depreciated
-#ifdef CPU_ADAPT_OF_GPU_PART    
+#ifdef CPU_ADAPT_OF_GPU_PART
   #include "cctag/progBase/MemoryPool.hpp"
 #endif
 
@@ -23,7 +23,7 @@ ImageDescriber_CCTAG::CCTagParameters::CCTagParameters(size_t nRings)
   : _internalParams(new cctag::Parameters(nRings))
 {
 #ifdef CCTAG_WITH_CUDA // CCTAG_WITH_CUDA
-  _internalParams->_useCuda = gpu::gpuSupportCUDA(3,5);
+  _internalParams->_useCuda = gpu::gpuSupportCUDA(5,2);
 #else
   _internalParams->_useCuda = false;
 #endif

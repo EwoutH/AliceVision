@@ -567,8 +567,8 @@ endif()
 # Add OpenImageIO
 set(OPENIMAGEIO_TARGET openimageio)
 ExternalProject_Add(${OPENIMAGEIO_TARGET}
-      URL https://github.com/OpenImageIO/oiio/archive/Release-2.2.6.1.tar.gz
-      URL_HASH MD5=abf85fe6e2d2fb6716a7737a3553329f
+      URL https://github.com/OpenImageIO/oiio/archive/Release-2.2.9.0.tar.gz
+      URL_HASH MD5=da2a44c4dda2a91e90eb0b3a739535b9
       DOWNLOAD_DIR ${BUILD_DIR}/download/oiio
       PREFIX ${BUILD_DIR}
       BUILD_IN_SOURCE 0
